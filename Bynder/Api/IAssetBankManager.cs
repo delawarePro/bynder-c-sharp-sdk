@@ -71,5 +71,36 @@ namespace Bynder.Api
         /// <returns>Task</returns>
         /// <exception cref="HttpRequestException">Can be thrown when requests to server can't be completed or HTTP code returned by server is an error</exception>
         Task ModifyMediaAsync(ModifyMediaQuery query);
+
+        /// <summary>
+        /// Creates a asset usage  
+        /// </summary>
+        /// <param name="query">Information needed to create a asset usage</param>
+        /// <returns>Task</returns>
+        /// <exception cref="HttpRequestException">Can be thrown when requests to server can't be completed or HTTP code returned by server is an error</exception>
+        Task CreateAssetUsageAsync(CreateAssetUsageQuery query);
+
+        /// <summary>
+        /// Retrieves asset usages 
+        /// </summary>
+        /// <param name="query">Information needed to retrieve asset usages</param>
+        /// <returns>Task that contains a list of asset usages</returns>
+        /// <exception cref="HttpRequestException">Can be thrown when requests to server can't be completed or HTTP code returned by server is an error</exception>
+        Task<IList<AssetUsage>> RetrieveAssetUsageAsync(AssetUsageQuery query);
+
+        /// <summary>
+        /// Deletes a asset usage
+        /// </summary>
+        /// <param name="query">Information needed to delete a asset usage</param>
+        /// <returns>Task</returns>
+        /// <exception cref="HttpRequestException">Can be thrown when requests to server can't be completed or HTTP code returned by server is an error</exception>
+        Task DeleteAssetUsageAsync(AssetUsageQuery query);
+
+        /// <summary>
+        /// This API call allows you to sync all your usage from a single integration.
+        /// </summary>
+        /// <param name="query">Query that contains all the assets in use.</param>
+        /// <returns>Task</returns>
+        Task SyncAssetUsageAsync(SyncAssetUsageQuery query);
     }
 }

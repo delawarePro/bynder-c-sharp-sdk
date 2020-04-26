@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Queries\AssetUsageQuery.cs" />
+    <Compile Include="Queries\CreateAssetUsageQuery.cs" />
     <Compile Include="BynderApiFactory.cs" />
     <Compile Include="BynderUploadException.cs" />
     <Compile Include="Converters\DateTimeOffsetConverter.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Queries\DownloadMediaQuery.cs" />
     <Compile Include="Queries\MediaInformationQuery.cs" />
     <Compile Include="Queries\ModifyMediaQuery.cs" />
+    <Compile Include="Queries\SyncAssetUsageQuery.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Converters\ITypeToStringConverter.cs" />
     <Compile Include="Converters\ListConverter.cs" />

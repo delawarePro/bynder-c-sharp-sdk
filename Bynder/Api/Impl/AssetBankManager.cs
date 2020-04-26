@@ -155,5 +155,76 @@ namespace Bynder.Api.Impl
 
             return _requestSender.SendRequestAsync(request);
         }
+
+        /// <summary>
+        /// Check <see cref="IAssetBankManager"/> for more information
+        /// </summary>
+        /// <param name="query">Check <see cref="IAssetBankManager"/> for more information</param>
+        /// <returns>Check <see cref="IAssetBankManager"/> for more information</returns>
+        public Task CreateAssetUsageAsync(CreateAssetUsageQuery query)
+        {
+            var request = new Request<string>
+            {
+                 Uri = $"/api/media/usage/",
+                 HTTPMethod = HttpMethod.Post,
+                 Query = query,
+                 DeserializeResponse = false
+            };
+
+            return _requestSender.SendRequestAsync(request);
+        }
+
+        /// <summary>
+        /// Check <see cref="IAssetBankManager"/> for more information
+        /// </summary>
+        /// <param name="query">Check <see cref="IAssetBankManager"/> for more information</param>
+        /// <returns>Check <see cref="IAssetBankManager"/> for more information</returns>
+        public Task<IList<AssetUsage>> RetrieveAssetUsageAsync(AssetUsageQuery query)
+        {
+            var request = new Request<IList<AssetUsage>>
+            {
+                Uri = $"/api/media/usage/",
+                HTTPMethod = HttpMethod.Get,
+                Query = query
+            };
+
+            return _requestSender.SendRequestAsync(request);
+        }
+
+        /// <summary>
+        /// Check <see cref="IAssetBankManager"/> for more information
+        /// </summary>
+        /// <param name="query">Check <see cref="IAssetBankManager"/> for more information</param>
+        /// <returns>Check <see cref="IAssetBankManager"/> for more information</returns>
+        public Task SyncAssetUsageAsync(SyncAssetUsageQuery query)
+        {
+            var request = new Request<string>
+            {
+                Uri = $"/api/media/usage/sync",
+                HTTPMethod = HttpMethod.Post,
+                Query = query,
+                DeserializeResponse = false
+            };
+
+            return _requestSender.SendJsonRequestAsync(request);
+        }
+
+        /// <summary>
+        /// Check <see cref="IAssetBankManager"/> for more information
+        /// </summary>
+        /// <param name="query">Check <see cref="IAssetBankManager"/> for more information</param>
+        /// <returns>Check <see cref="IAssetBankManager"/> for more information</returns>
+        public Task DeleteAssetUsageAsync(AssetUsageQuery query)
+        {
+            var request = new Request<string>
+            {
+                Uri = $"/api/media/usage/",
+                HTTPMethod = HttpMethod.Delete,
+                Query = query,
+                DeserializeResponse = false
+            };
+
+            return _requestSender.SendRequestAsync(request);
+        }
     }
 }
